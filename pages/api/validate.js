@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
     const validServers = await Server.find({ valid: true })
       .sort({ lastSeen: -1 })
-      .limit(10);
+      .limit(50);
 
     const totalValid = await Server.countDocuments({ valid: true });
 
